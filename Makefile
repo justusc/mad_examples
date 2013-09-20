@@ -1,10 +1,10 @@
 CXX = mpicxx
 CPPFLAGS = -I/path/to/madness/include
 CXXFLAGS = -O3 -g -Wall -fmessage-length=0
-LDFLAGS = -L/path/to/madness/lib
-LIBS = -lMADworld
+LDFLAGS = 
+LIBS = -L/path/to/madness/lib -lMADworld
 
-all: axpy reduce fib fast_fib
+all: axpy reduce fib hello
 
 
 axpy: axpy.cc Makefile
@@ -16,9 +16,9 @@ reduce: reduce.cc Makefile
 fib: fib.cc Makefile
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) $(LIBS) -o fib fib.cc
 
-fast_fib: fast_fib.cc Makefile
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) $(LIBS) -o fast_fib fast_fib.cc 
+hello: hello.cc Makefile
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) $(LIBS) -o hello hello.cc 
 
 
 clean:
-	rm -f axpy reduce fib fast_fib
+	rm -f axpy reduce fib hello
