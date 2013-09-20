@@ -59,8 +59,7 @@ madness::Future<double> task_reduce(madness::World* world,
 }
 
 int main(int argc, char** argv) {
-  madness::initialize(argc,argv);
-  madness::World world(MPI::COMM_WORLD);
+  madness::World& world = madness::initialize(argc,argv);
 
   // Allocate initialize vectors
   double* x = new double[size];

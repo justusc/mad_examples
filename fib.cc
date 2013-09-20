@@ -55,8 +55,8 @@ madness::Future<long> task_fib(madness::World* world,
 long nth = 46;
 
 int main(int argc, char** argv) {
-  madness::initialize(argc,argv);
-  madness::World world(MPI::COMM_WORLD);
+  
+  madness::World& world = madness::initialize(argc,argv);
 
   // Serial calculation
   const double serial_start = madness::wall_time();

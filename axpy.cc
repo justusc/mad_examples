@@ -34,8 +34,7 @@ void axpy(double* y, const double* x, const double a, const int n) {
 }
 
 int main(int argc, char** argv) {
-    madness::initialize(argc,argv);
-    madness::World world(MPI::COMM_WORLD);
+    madness::World& world = madness::initialize(argc,argv);
 
     // Allocate initialize vectors
     double* x = new double[size];
