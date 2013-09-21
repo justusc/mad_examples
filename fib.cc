@@ -49,8 +49,8 @@ int main(int argc, char** argv) {
   // Serial calculation
   const double serial_start = madness::wall_time();
   long fib1 = serial_fib(nth);
-  std::cout << nth << "-th Fibonacci is " << fib1 << "\n";
   const double serial_time = madness::wall_time() - serial_start;
+  std::cout << nth << "-th Fibonacci is " << fib1 << "\n";
 
   std::cout << "Serial time = " << serial_time << "\n";
 
